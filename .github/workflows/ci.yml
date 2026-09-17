@@ -1,0 +1,29 @@
+# Bai 3 - Pipeline CI don gian voi GitHub Actions
+# Moi lan push hoac tao pull request, pipeline tu dong:
+# lay code -> cai Node.js -> cai dependencies -> chay unit test (Jest) + coverage
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: Unit Test (Jest)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run unit tests
+        run: npm test
