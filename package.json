@@ -1,0 +1,13 @@
+{
+  "name": "shop-cart",
+  "version": "1.0.0",
+  "description": "Project nho demo CI/CD: GitHub Actions tu dong chay unit test (Jest) moi lan push",
+  "main": "src/cart.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
